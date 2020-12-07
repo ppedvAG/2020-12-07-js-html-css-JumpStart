@@ -6,20 +6,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello HTML & Emmet</title>
+    <style>
+        /* mit einem Type Selector werden alle Element von diesem Typ selektiert. */
+        h2 {
+            border: thin solid;
+        }
+
+        /* ID Selector */
+        #h2-versch {
+            margin-left: 5em;
+            color: red;
+        }
+
+
+        /* Class Selector */
+        .blue {
+            color: blue;
+            /* Um Spezifität umzugehen:  */
+            /* color: blue !important; */
+        }
+
+        /* Attribute Selector */
+        [disabled] {
+            border: thick dotted yellow;
+        }
+
+        /* mit Parent-Child-Selector selektiert man nur die Kinder von dem angegebenen Parent*/
+        div > p {
+            font-size: x-small;
+        }
+
+        /* mit Siblings Selector selektiert man nur die danach stehenden Geschwister vom angegebenen Sibling*/
+        h2 + p {
+            text-decoration: line-through;
+        }
+
+        :hover {
+            font-size: xx-large;
+        }
+
+        :not(:hover) {
+            font-size: medium;
+        }
+
+    </style>
+
 </head>
 
 <body>
     <!-- Infos für Benutzer der Web-Seite / Web-App -->
     <h1>HTML Grundlagen und Emmet (HTML & CSS Snippets)</h1>
 
-    <h2>Heading Range 2</h2>
+    <p>paragraph</p>
 
-    <a href="">Anker Link</a>
+    <h2>Heading Range 2</h2>
 
     <p class="blue">Paragraph</p>
     <!-- todo #1 -->
 
-    <h2 id="h2-versch">Verschachtelung</h2>
+    <h2 id="h2-versch" class="blue">Verschachtelung</h2>
     <div class="blue">
         <img src="https://picsum.photos/200/300" alt="unwichtiges Zufallsbild">
         <p>Beschreibung zu Bild</p>
@@ -35,7 +80,9 @@
     <div>text in div</div>
     <p></p> -->
 
-    <br /> break schreibt man auch als <br>
+    <br /> 
+    break schreibt man auch als 
+    <br>
 
     <h2>HTML Attribute</h2>
     <input type="text">
@@ -81,6 +128,8 @@
     <h3>Attribute</h3>
     <!-- button[disabled] -->
     <button disabled="disabled">button</button>
+    <button disabled>button</button>
+    <input type="text" disabled>
 
 
     <h3>Geschwister / Siblings</h3>
@@ -116,22 +165,6 @@
     </div>
 
     <ol></ol>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>

@@ -10,6 +10,9 @@
 
 - [ ] Demo: [html basics & emmet](html-hellohtml.html)
 - [ ] Commit: 
+
+## M02 | CSS GETTING STARTED
+
 ## JQUERY ##
 
 Grundlagen jQuery
