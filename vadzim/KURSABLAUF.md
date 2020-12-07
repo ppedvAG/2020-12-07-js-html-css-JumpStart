@@ -1,5 +1,15 @@
 # JS HTML CSS JQ #
 
+## M00 | WARMING UP
+
+- [x] Greeter
+- [x] VS Code kennenlernen
+- [x] Git, GitHub, Repository
+
+## M01 | HTML GETTING STARTED
+
+- [ ] Demo: [html basics & emmet](html-hellohtml.html)
+- [ ] Commit: 
 ## JQUERY ##
 
 Grundlagen jQuery
