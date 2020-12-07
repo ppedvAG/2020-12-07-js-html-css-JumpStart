@@ -1,0 +1,16 @@
+<h1>Hello JS</h1>
+
+<label for="">Eingabe
+    <input id="inputId" type="number" min="0" max="99">
+</label>
+<button id="buttonId" onclick="clickHander()">OK</button>
+<p id="output">output</p>
+
+<script>
+    function clickHander() {
+        if (inputId.value > 18)
+            output.innerText = 'volljährig';
+        else
+            output.innerText = 'minderjährig';
+    }
+</script>
