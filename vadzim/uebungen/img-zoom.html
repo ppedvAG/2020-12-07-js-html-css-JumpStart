@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+    Übung: Bilder vergrößern
+
+- die Bilder aus einer HTML-Datei
+- mit Klick auf den Button werden die Bilder vergrößert
+    </pre>
+    <h1>Ü IMG ZOOM</h1>
+    <img src="https://picsum.photos/id/235/100" alt="" width="200" height="200">
+    <img src="https://picsum.photos/id/236/100" alt="">
+    <img src="https://picsum.photos/id/237/100" alt="">
+    <button onclick="zoom()">ZOOM</button>
+
+    <script>
+        // document.images listet automatisch alle Bilder von der Datei auf
+        function zoom() {
+            // snippet für for-iterator - forof :
+            for (const iterator of document.images) {
+                let newSrc = iterator.src
+                newSrc = newSrc.substr(0, newSrc.length - 3)
+                iterator.src = newSrc.concat('200')
+            }
+        }
+    </script>
+</body>
+</html>

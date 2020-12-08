@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVERSING</title>
+</head>
+
+<body>
+    <h1>TRAVERSING</h1>
+    <h2>über automatisch erzeugte ID-Variable</h2>
+    <pre>
+        Beim Anlegen einer ID bei Elementen 
+        wird automatisch eine JS-Variable unter dem gleichen Namen erzuegt.
+    </pre>
+    <p id="p1">p1</p>
+    <script>
+        console.log('p1 :>> ', p1);
+    </script>
+    <script src="./dom-traversing.js"></script>
+    <hr>
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+    <h2>getElementById()</h2>
+    <pre>
+    der erste Treffer wird selektiert.
+</pre>
+    <p id="p2">p2</p>
+    <p id="p2">p2</p>
+    <script>
+        /* todo #4 */
+        document.getElementById('p2').innerText = 'p2 gefunden'
+    </script>
+    <hr>
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+    <h2>getElementsByName</h2>
+    <pre>
+        liefert NodeList, weil nicht nur HTMLElemente abgefangen werden können
+        getElementsByName(elementName: string): NodeListOf HTMLElement
+            Gets a collection of objects based on the value of the NAME or ID attribute.
+    </pre>
+    <p name="p3name">p3</p>
+    <select name="p3name" id=""></select>
+    <script>
+        // console.log('test');
+        let return3 = document.getElementsByName('p3name');
+        console.log('return3 :>> ', return3); // NodeList(2) [p, select]
+        console.log('typeof return3 :>> ', typeof return3); // object
+
+        return3.forEach(item => console.log('item >> ', item))
+
+    </script>
+    <hr>
+
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+    <h2>getElementsByTagName</h2>
+    <pre>
+    liefert eine HTMLCollection, 
+    weil nur die gleichen HTML-Elemente abgefangen werden.
+</pre>
+    <script>
+        let return4 = document.getElementsByTagName('p');
+        console.log('return4 :>> ', return4); // HTMLCollection(4) [p#p1, p#p2, p#p2, p, p1: p#p1, p2: p#p2, p3name: p]
+        for (const iterator of return4) {
+            console.log('iterator :>> ', iterator);
+        }
+    </script>
+</body>
+
+</html>

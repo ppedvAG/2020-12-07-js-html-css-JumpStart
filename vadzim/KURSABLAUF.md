@@ -1,4 +1,4 @@
-# JS HTML CSS JQ #
+# JS HTML CSS JQ
 
 ## M00 | WARMING UP
 
@@ -14,18 +14,47 @@
 ## M02 | CSS GETTING STARTED
 
 - [ ] Commit: 
+
 ## M03 | JS GETTING STARTED
 
 - [ ] Ausdrücke & Anweisungen
 - [ ] Commit: 
+
 ## M04 | JS SCOPES & VARIABLES
 
 - [ ] Commit: 
 
-## M05 | DOM INTRO
+## M05 | DOM INTRO & TRAVERSING
 
-- [x] Zusammenhang zwischen DOM, HTML, CSS & JS
-- [x] [dom-traversing.html]
+- [ ] Zusammenhang zwischen DOM, HTML, CSS & JS
+- [ ] [dom-traversing.html]
+- [ ] Commit:
+
+## M xx | CSS UNITS
+
+## M06 | JS OBJECTS
+
+- [ ] Konstruktoren
+- [ ] [js-objects.html]
+
+## MXX | DOM MANIPULATION
+
+- [ ] Commit
+
+## MXX | EVENTS
+
+- [ ] Event Object
+- [ ] Event types
+- [ ] Events Bubbling
+- [ ] commit
+## MXX | JS INTERMEDIATE
+
+- [ ] [js-promises1.html]
+- [ ] [js-promises2.html]
+- [ ] [js-promises3.html]
+- [ ] [js-workers.html]
+- [ ] [js-serviceworker.html]
+- [ ] [js-classes.html]
 
 ## gewünscht:
 
