@@ -1,20 +1,90 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Infos für Browser, dem Benutzer werden sie nicht angezeigt -->
+    <!-- Infos / Metainformation für Browser, dem Benutzer werden sie nicht angezeigt -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello HTML & Emmet</title>
 </head>
 
 <body>
-    <!-- Infos für Benutzer der Web-Seite / Web-App -->
+    <!-- strg k strg c für Kommentar in VS -->
+    <!-- Benutzer ist derjenige, für wen die Webseite entwickelt wird -->
+    <p>
+        Infos für Benutzer der Web-Seite / Web-App stehen in body
+    </p>
     <h1>HTML Grundlagen und Emmet (HTML & CSS Snippets)</h1>
+    <div>
+        <p>Pro HTML-Detei ist besser nur eine H1-Überschrift zu verwenden. Wegen SEO und Validität von HTML</p>
+    </div>
+    <p>das häufig verwendete Tag div ist für CSS-Zwecke da. 
+    Es wird gebraucht entweder zum Layouten (Positionieren) von Inhalten 
+    oder zum Definieren von Abständen zwischen den Inhalten.</p>
 
     <h2>Heading Range 2</h2>
+    <h2>HTML Tags</h2>
+    <p>sind Elemente in der HTML-Datei, die mit einer spitzen Klammer anfangen.</p>
 
+    <h2>Tags aus einem öffnenden Tagteil und einem schließenden Tagteil</h2>
+    <p>
+        werden gebraucht, um Inhalte zwischen diesen zwei Teilen vom Tag darzustellen.
+        Man markiert den Anfang und das Ende für diese Inhalte.
+        Inhalte von HTML-Tags sind Kinder von den Entsprechenden HTML-Elementen (HTML-Tags).
+        Tags zum Rendern von Inhalten.
+    </p>
+
+    <h2>Tags, die nur aus einem Teil bestehen</h2>
+    <p>
+        sind nicht gedacht, um irgendwelche Inhalte wiederzugeben oder umzuschließen,
+        sondern um eine Stelle zu markieren, wo ein HTML-Element(HTML-Tag) erscheinen soll
+    </p>
+    <p>
+        z.B br (break) fügt ein unsichtbares Element, welches die ganze Breite von Viewport (Bildschirm) annimmt und dadurch das nachfolgende Element dazu zwingt,
+        in einer neuen Zeile zu erscheinen.
+    </p>
+    <input type="text" value="" />
+    <br />
+    <input type="text" value="" />
+    <p>
+        input-Elemente wiedergeben keine Inhalte,
+        sondern sie warten auf die Inhalte (Eingabe) von dem Benutzer.
+        Das ist der Grund, warum man den zweiten (schließenden) Tagteil nicht braucht.
+    </p>
+    <p>
+        hr (horizontal ruler) zeichnet eine Linie
+    </p>
+    <hr />
+    <img src="" alt="" />
+    <p>img-Tag besteht nur aus einem Tail, weil nur der Anfangspunkt für ein Bild gesetzt wird. Die Anfangsgröße von diesem Bild hängt von der Bild-Datei ab, die durch das Attribut src verlinkt wird.</p>
+
+    <p>
+        a-Tag verlinkt auch irgendwelche Inhalte, hat aber trotzdem einen schließenden Tag.
+        Weil wir nicht die HyperReference (sprich: Verlinkung) und nicht die Webseite hinter dieser Verlinkung, sondern nur eine Beschreibung zeigen wollen.
+        Quasi wohin diese Verlinkung führt.
+    </p>
     <a href="">Anker Link</a>
+
+    <p>
+
+
+
+
+        text von paragraph
+    </p>
+    <pre>
+
+
+
+
+                                    text von paragraph
+    </pre>
+
+
+    <h2>Wie viele Tags gibt es</h2>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">MDN Dokumentation</a>
+    <a href="https://www.w3schools.com/tags/default.asp">w3shools Tags Reference</a>
+
 
     <p class="blue">Paragraph</p>
     <!-- todo #1 -->
@@ -27,7 +97,7 @@
 
     <h2>Falsche Verschachtelung</h2>
     <p>
-    <div>text in div</div>
+        <div>text in div</div>
     </p>
 
     <!-- gerendert in Chrome -->
@@ -35,7 +105,7 @@
     <div>text in div</div>
     <p></p> -->
 
-    <br /> break schreibt man auch als <br>
+
 
     <h2>HTML Attribute</h2>
     <input type="text">
@@ -92,9 +162,11 @@
 
     <h3>Random Text</h3>
     <!-- p>lorem -->
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum libero quaerat deserunt dolorum? Tempora
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum libero quaerat deserunt dolorum? Tempora
         doloremque, soluta ullam omnis earum voluptate repudiandae voluptatem laborum expedita veniam ad dicta eos?
-        Ipsam, animi?</p>
+        Ipsam, animi?
+    </p>
     <!-- p>lorem5 -->
     <p>Lorem ipsum dolor sit amet.</p>
 
