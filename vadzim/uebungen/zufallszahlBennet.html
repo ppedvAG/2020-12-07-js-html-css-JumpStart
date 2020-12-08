@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bennet is Equal</h1>
+    <label for="">Eingabe: 
+        <input id="inputID" type="number" min='0' max='2'>
+    </label>
+    <button id="buttonID" onclick="checkIfEqual()">Send</button>
+    <p id="output">output</p>
+ 
+    <script>
+        /* todo #3 */
+        const random = Math.floor(Math.random()*3);
+        function checkIfEqual () {
+            switch (inputID.value) {
+                case inputID.value == random:
+                console.log('inputID.value :>> ', inputID.value);
+                output.innerText = 'gleich'
+                break;
+            
+                case inputID.value < random:
+                console.log('inputID.value :>> ', inputID.value);
+                output.innerText = 'kleiner'
+                break;
+ 
+                case inputID.value > random:
+                console.log('inputID.value :>> ', inputID.value);
+                output.innerText = 'größer'
+                break;
+ 
+                default:
+                console.log('inputID.value :>> ', inputID.value);
+                output.innerText += 'error'
+                    break;
+            }
+            
+        }
+        
+        console.log('random :>> ', random);
+        
+    </script>
+</body>
+</html>

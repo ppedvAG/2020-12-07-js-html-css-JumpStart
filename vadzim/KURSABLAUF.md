@@ -13,6 +13,24 @@
 
 ## M02 | CSS GETTING STARTED
 
+- [ ] Commit: 
+## M03 | JS GETTING STARTED
+
+- [ ] Ausdrücke & Anweisungen
+- [ ] Commit: 
+## M04 | JS SCOPES & VARIABLES
+
+- [ ] Commit: 
+
+## M05 | DOM INTRO
+
+- [x] Zusammenhang zwischen DOM, HTML, CSS & JS
+- [x] [dom-traversing.html]
+
+## gewünscht:
+
+- [ ] Einblick ins React & Angular
+
 ## JQUERY ##
 
 Grundlagen jQuery

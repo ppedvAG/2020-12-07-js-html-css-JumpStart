@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Julian. Rate die richige Zahl!</h1>
+    <input id="eingabe" type="number" min="1" max="3">
+    <button onclick="clickhandler()"></button>
+    <p id="ausgabe"></p>
+    <script>
+        /* todo #2 */
+        let clickhandler = function () {
+            let eingabe = document.getElementById("eingabe").value
+ 
+            let randomNumber = function getRandomInt(min = 1, max = 4) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                random = Math.floor(Math.random() * (max - min)) + min;
+                console.log('random :>> ', random);
+                console.log('typeof random :>> ', typeof random);
+                return random;
+            }
+            console.log('eingabe :>> ', eingabe);
+            console.log('typeof eingabe :>> ', typeof eingabe);
+            //console.log('randomNumber :>> ', randomNumber());
+ 
+            if (+eingabe === randomNumber()) {
+                document.getElementById("ausgabe").innerHTML += "Richtig!"
+            }
+            else {
+                document.getElementById("ausgabe").innerHTML += "Falsch!"
+ 
+            }
+        }
+    </script>
+</body>
+</html>

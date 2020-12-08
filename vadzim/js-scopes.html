@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes</title>
+    <style>
+        pre {
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gültigkeitsbereiche</h1>
+    <h2>Einleitung</h2>
+    <pre>
+        Die Art von Variablen (Schlüsselwort, mit welchem sie angelegt sind) entscheidet, 
+        ob eine Variable die Scopes akzeptiert.
+
+        Allein die geschweiften Klammern reichen, um einen neuen Gültigkeitsbereich anzulegen.
+    
+        Sachen aus einem umschließenden Scope sind im tieferen Scope verfügbar.
+    </pre>
+    <script>
+        var v = 3;
+        x = 5;
+        let l = 4;
+        const c = 3.14;
+        {
+            console.log('v :>> ', v);
+            console.log('l :>> ', l);
+            console.log('x :>> ', x);
+            console.log('c :>> ', c);
+        }
+    </script>
+
+    <hr>
+
+    <h2>variablen var & let und Scopes</h2>
+    <pre>
+    Variablen ohne Schlüsselwort sind var-Variablen.
+    const-Variablen verhalten sich wie let-Variablen.
+
+    Bezeichner von var-Variablen dürfen für neue Variablen genutzt werden.
+    Das geht nicht bei let-Variablen: Uncaught SyntaxError: Identifier 'l2' has already been declared
+   
+    var-Variablen sind globale Variablen und ignorieren Scopes.
+    let-Variablen, declariert in tieferen Scopes, sind nach draußen nicht sichtbar (Uncaught ReferenceError: l2 is not defined).
+</pre>
+    <script>
+        {
+        var v2 = 4;
+        var v2 = 5;
+        console.log('v2 in {} :>> ', v2); // 5
+
+        let l2 = 5;
+        // let l2 = 4;
+        console.log('l2 in {}:>> ', l2);
+        }
+
+        console.log('v2 nach {}:>> ', v2);
+        // console.log('l2 nach {}:>> ', l2); // error
+    </script>
+
+    <hr>
+
+    <h2>const bei Primitiven & komplexen Datentypen</h2>
+    <pre>
+        Konstanten muss man sofort initialisieren (SyntaxError: Missing initializer in const declaration).
+        Regel: Werte von const-Variablen (Konstanten) dürfen nicht geändert werden (Uncaught TypeError: Assignment to constant variable).
+
+        Wird eine Konstante zum Zwischenspeichern von komplexeren Datentypen verwendet, 
+        dürfen innerhalb von diesen Objekte weiterhin Änderungen stattfinden.
+    </pre>
+    <script>
+        // const umsatzSteuer; // error
+        const umsatzSteuer = 0.19;
+        const elements = ['eisen', 'kupfer', 'aluminium'];
+
+        // umsatzSteuer = 0.16;
+        // elements = ['gold'];
+        console.log('umsatzSteuer :>> ', umsatzSteuer);
+        console.log('elements :>> ', elements);
+        elements[2] = 'gold';
+        console.log('elements :>> ', elements);
+    </script>
+</body>
+</html>
