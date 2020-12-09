@@ -35,9 +35,13 @@
 - [ ] Callbacks
 - [ ] Function Variables
 - [ ] Arrow functions & this
+- [ ] [Demo](js-functions.html)
+- [ ] [Übung](uebungen/js-functions-u.html)
 - [ ] commit
 
 ## M xx | CSS UNITS
+
+commit
 
 ## M06 | JS OBJECTS
 
