@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Listeneintrag muss erweitert werden</li>
+        <li>Listeneintrag muss erweitert werden</li>
+        <li>Listeneintrag muss erweitert werden</li>
+        <li>Listeneintrag muss erweitert werden</li>
+    </ul>
+    
+    <script>
+        /* selektiere alle Listeinträge und baue daraus Listeinträge mit eingebauten AnkerLinks */
+
+let sammlung = document.getElementsByTagName("li"); // HTMLCollection
+console.log('sammlung :>> ', sammlung);
+
+function addLink (el) {
+    let previousText = el.innerText;
+    el.innerHTML = `
+    <a href="https://google.com">
+    ${previousText}
+    </a>
+    `
+}
+
+// let array = Array.from(sammlung);
+let array = [...sammlung]; // spread-Operator
+console.log('array :>> ', array);
+array.map((liElementAusDerSammlung) => {
+    addLink(liElementAusDerSammlung)
+})
+        // Sammlung.map(callback)
+        // innerText | innerHTML
+
+    </script>
+</body>
+</html>

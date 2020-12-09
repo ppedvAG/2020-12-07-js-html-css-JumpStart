@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <h1>Functions</h1>
+    <p id="p1">initialValue</p>
+    <script>
+        let functionVariable = function fctName() {
+            p1.innerText = 'newValue'
+        }
+        console.log('functionVariable :>> ', functionVariable);
+        console.log('typeof functionVariable :>> ', typeof functionVariable); // function
+        // fctName(); // not defined
+        // functionVariable();
+
+        function fctName2() {
+            p1.innerText = this.valueOf();
+            console.log('hallo aus fctName2');
+        }
+        let functionVariable1 = fctName2;
+        // functionVariable1();
+
+        let functionVariable2 = function () {
+            p1.innerText = 'newValue durch anonyme Fct'
+        }
+        // functionVariable2()
+
+        let functionVariable3 = function () {
+            p1.innerText = this.valueOf(); // [object Window]
+        }
+        // functionVariable3();
+
+        // anonyme Funktionen kann man in Pfeilnotation deklarieren
+        let functionVariable4 = () => {
+            p1.innerText = this.valueOf(); // [object Window]
+        }
+        // functionVariable4();
+
+
+        let functionVariable5 = v => p1.innerText = v.length;
+        functionVariable5('text'); //
+    </script>
+    <hr>
+
+    <h2>Funktionen als Callbacks</h2>
+    <p>Aktuelles Datum: <span id="uhr"></span></p>
+<script>
+    console.log('Funktionen als Callbacks');
+    setInterval(() => {
+        uhr.innerText = Date();
+    }, 1000);
+
+    setInterval(fctName2, 2000); // also alle Funktionsdeklarationen ohne Aufruf sind hier erlaubt
+    // setInterval(fctName2(), 2000); // auf diese Weise wird die Funktion fctName2 nur einmal ausgeführt
+
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

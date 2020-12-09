@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <h1>Objects</h1>
+    <script>
+        let stringPrimitive = 'simpleString'
+        let stringObject = new String('stringValue');
+        console.log('typeof stringPrimitive :>> ', typeof stringPrimitive); // string
+        console.log('typeof stringObject :>> ', typeof stringObject); // object
+        console.log('stringObject :>> ', stringObject); // String {"stringValue"}
+        console.log('stringObject[2] :>> ', stringObject[2]); // r
+        console.log('stringObject.indexOf("r") :>> ', stringObject.indexOf('r'));
+
+        console.log('aus einem Objekte eine Primitive bekommen:');
+        console.log('stringObject.valueOf() :>> ', stringObject.valueOf()); //stringValue
+        console.log('typeof stringObject.valueOf() :>> ', typeof stringObject.valueOf()); //string
+
+        console.log("Darf ich String-Methoden auch bei der string-Primitive anwenden?");
+        console.log('stringPrimitive.indexOf("t") :>> ', stringPrimitive.indexOf("t")); // 7
+        console.log('stringPrimitive.length :>> ', stringPrimitive.length); // 12
+
+        let etwas = String();
+        console.log('etwas :>> ', etwas);
+        console.log('typeof etwas :>> ', typeof etwas); // string
+        etwas = String(4);
+        console.log('etwas :>> ', etwas); // 4
+        etwas = String([4, 2, 45])
+        console.log('etwas :>> ', etwas);
+        console.log('typeof etwas :>> ', typeof etwas); // string
+
+        let array = [3,2,1,6]
+        console.log('array :>> ', array);
+        console.log('array.toString() :>> ', array.toString());
+
+        console.log('typeof ([] + "") :>> ', typeof ([] + "")); // string
+        console.log('typeof ([] + 3) :>> ', typeof ([] + 3)); // string
+        console.log('typeof ([] + object) :>> ', typeof ([] + {})); // string
+
+
+
+    </script>
+</body>
+</html>

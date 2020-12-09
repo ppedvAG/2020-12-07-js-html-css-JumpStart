@@ -13,4 +13,18 @@
         else
             output.innerText = 'minderjährig';
     }
+    /* Strings mit Backtick (Gravis) */
+    /**
+    1. dürfen mehrzeilig sein
+    2. und dürfen in sich JS-Ausdrücke beinhalten */
+    let newString = `test String 
+    neue Zeile im gleichen String`
+    console.log('newString :>> ', newString);
+    newString = `das heutige Datum: ${new Date()}`;
+console.log('newString mit Datum :>> ', newString);
+
+    let oldString = "test String" + 
+    "neue Zeile im gleichen String";
+
+    
 </script>

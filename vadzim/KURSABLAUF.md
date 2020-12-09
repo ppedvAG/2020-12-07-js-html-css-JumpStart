@@ -1,4 +1,4 @@
-# JS HTML CSS JQ
+﻿# JS HTML CSS JQ
 
 ## M00 | WARMING UP
 
@@ -30,6 +30,13 @@
 - [ ] [dom-traversing.html]
 - [ ] Commit:
 
+## MXX | FUNCTIONS
+
+- [ ] Callbacks
+- [ ] Function Variables
+- [ ] Arrow functions & this
+- [ ] commit
+
 ## M xx | CSS UNITS
 
 ## M06 | JS OBJECTS
@@ -47,6 +54,9 @@
 - [ ] Event types
 - [ ] Events Bubbling
 - [ ] commit
+
+
+
 ## MXX | JS INTERMEDIATE
 
 - [ ] [js-promises1.html]

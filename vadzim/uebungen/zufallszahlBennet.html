@@ -15,10 +15,11 @@
  
     <script>
         /* todo #3 */
-        const random = Math.floor(Math.random()*3);
+        let random = Math.floor(Math.random()*3);
         function checkIfEqual () {
+            /* switch cases erwarten konkrete Werte von der Variable in switch(), keine Bedingungen */
             switch (inputID.value) {
-                case inputID.value == random:
+                case random:
                 console.log('inputID.value :>> ', inputID.value);
                 output.innerText = 'gleich'
                 break;
