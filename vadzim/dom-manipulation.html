@@ -6,7 +6,7 @@
     <title>DOM MANIPULATION</title>
 </head>
 <body id="body">
-    <h1 name=h1Id>DOM MANIPULATION</h1>
+    <h1 id=h1Id>DOM MANIPULATION</h1>
     <div id="container"></div>
 
     <script>
@@ -15,14 +15,22 @@
         newElement.appendChild(contenForArticle);
 
         document.getElementById('container').appendChild(newElement);
-        let elementsToRemove = document.getElementsByName('h1Id')
-        console.log('elementsToRemove :>> ', elementsToRemove); // NodeList [h1]
+        let elementToRemove = document.getElementById('h1Id')
+        console.log('elementsToRemove :>> ', elementToRemove); // NodeList [h1]
         let docBody = document.getElementById('body')
         console.log('docBody :>> ', docBody);
-        // parentNode.removeChild(childNode)
-        docBody.removeChild(elementsToRemove[0]);
+        // Logik: parentNode.removeChild(childNode)
+        
         /* https://developer.mozilla.org/de/docs/Web/API/Node/removeChild */
 
+        // Kleine Aufgabe:
+        // Die h1 erst nach 2 Sekunden löschen
+        // verwenden Sie die Timing-Funktion setTimeout, 
+        // die eine Callback-Funktion als Argument Nr1 haben möchte
+        // Argument Nr 2 sind Milisekunden, nach denen das Callback ausgeführt werden muss.
+        setTimeout(() => {
+            docBody.removeChild(elementToRemove);
+        }, 2000);
 
     </script>
     

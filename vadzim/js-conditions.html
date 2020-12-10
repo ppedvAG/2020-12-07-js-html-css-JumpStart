@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONDITIONS</title>
+</head>
+
+<body>
+    <h1>CONDITIONS</h1>
+    <script>
+        let trueVar = true, falseVar = false
+        if (trueVar == falseVar)
+            console.log('true');
+        else
+            console.log('false');
+
+        let etwas = trueVar == falseVar ? console.log('true') : console.log('false'); // false
+        console.log('etwas :>> ', etwas);
+
+        etwas = trueVar == falseVar ? 'wahr' : 'falsch';
+        etwas = console.log('etwas :>> ', etwas);
+        console.log('etwas :>> ', etwas);
+
+        etwas = "var" == "var" ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas);
+
+        etwas = "var" ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // wahr, weil kein undefined
+
+        etwas = undefined ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // falsch
+
+        etwas = null ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // falsch
+
+        etwas = 1 ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // wahr
+
+        /* beliebige Ausdrücke (Expressions) sind als Bedingung erlaubt, die irgendwas zurückgeben. 
+        Eine Bedingung (ein Vergleich) ist übrigens auch ein Ausdruck */
+        function giveOne() {
+            return 1;
+        }
+        etwas = giveOne() ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // wahr
+
+        console.clear();
+        etwas = 0 ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // falsch
+
+        console.clear();
+        etwas = [0] ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // wahr
+
+        myArray = ['w']
+        console.clear();
+        etwas = myArray[1] ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // falsch
+
+        console.clear();
+        etwas = true && console.log('') ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // falsch
+
+        console.clear();
+        etwas = false && console.log('') ? 'wahr' : 'falsch'
+        console.log('etwas :>> ', etwas); // falsch
+
+
+        /* Auslesen / Ausgeben von Einträgen aus einem Array */
+        for (let index = 0; index < myArray.length; index++) {
+            const element = myArray[index];
+            console.log('gruß aus console.log'); // wurde ausgeführt
+            console.log('element :>> ', element);
+        }
+
+        /* Ändern / Schreiben von Werten in ein Array */
+        for (let index = 0; index < myArray.length; index++) {
+            myArray[index] = 1;
+            console.log('myArray[index] :>> ', myArray[index]);
+        }
+
+
+           let number = 0;
+        for (let iterator of ['3', '4']) {
+            iterator = 1;
+            console.log('gruß aus console.log'); // wurde ausgeführt
+           console.log('++number :>> ', ++number); // Versuch, eine steigende Variable zum Nummerieren zu benutzen - Works
+            console.log('iterator :>> ', iterator); // 1
+        }
+
+
+        for (const key in window.screen) {
+            // if (window.screen.hasOwnProperty(key)) { // keine eigenen Props, alle sind vererbt vom Screen.Prototype
+            console.log('key :>> ', key);
+            const element = window.screen[key];
+            console.log('element :>> ', element);
+            // }
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCH API</title>
+</head>
+
+<body>
+    <h1>FETCH API</h1>
+    <pre>
+        Promises
+        Asynchronität
+    </pre>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(jsonstring => jsonstring.json()) // deserialisieren: aus einem String ein Objekt erstellen
+            .then(deserialisiertesString => {
+                console.log(deserialisiertesString)
+                return 'erfolgreich in die Konsole ausgegeben'
+            }
+            )
+            .then(versuch => console.log('versuch :>> ', versuch))
+
+        function fctName(param) {
+            console.log('param :>> ', param);
+
+        }
+        fctName('argument beim Aufruf der Funktion'); // wurde früher ausgeführt als fetch
+
+    </script>
+</body>
+
+</html>

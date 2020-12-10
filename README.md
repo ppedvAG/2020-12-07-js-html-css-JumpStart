@@ -11,12 +11,12 @@ Datum: 07.12.2020; Ort: VC; Format: Teilzeit
 - [x] Greeter
 - [x] VS Code kennenlernen
 - [x] Git, GitHub, Repository
-- [ ] Commit
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/2dce103f59c62f9d8cec6a383ad17a6f23b6c2bb)
 
 ## M01 | HTML GETTING STARTED
 
-- [ ] Demo: [html basics & emmet](html-hellohtml.html)
-- [ ] Commit: 
+- [x] Demo: [html basics & emmet](vadzim/html-hellohtml.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/3c2b71c1766fbdb9bc0fd34dbf457947ab2c16e9)
 
 ## M02 | CSS GETTING STARTED
 
@@ -54,12 +54,12 @@ commit
 
 - [ ] Commit
 
+## MXX | JS CONDITIONS
+
 ## M06 | JS OBJECTS
 
 - [ ] Konstruktoren
 - [ ] [js-objects.html]
-
-
 
 ## MXX | EVENTS
 
@@ -68,7 +68,7 @@ commit
 - [ ] Events Bubbling
 - [ ] commit
 
-
+## MXX | JS CLASSES
 
 ## MXX | JS INTERMEDIATE
 
