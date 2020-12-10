@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dynamic Table</title>
 </head>
+
 <body>
     <h1>dynamic Table</h1>
     <pre>
@@ -12,10 +14,47 @@
         bauen Sie eine Funktion zum Ausgeben vom Array aus Todos-Objekte in eine Tabelle
         Setzen Sie die gebaute Funktion in einer .then() funktion ein.
     </pre>
+    <table id="tableId">
+
+    </table>
+
+    <!-- table#tableId>(thead>tr>th*3)+tbody#tbodyId+(tfoot>tr>th*3) -->
+
     <script>
+        let todosURL = 'https://jsonplaceholder.typicode.com/todos'
 
+        fetch(todosURL)
+            .then(jsonString => jsonString.json())
+            .then(todosArray => renderTodos(todosArray))
+
+        function renderTodos(todos) {
+            tableId.innerHTML = `
+            <thead>
+            <tr>
+                <th>id</th>              
+                <th>title</th>
+                <th>completed</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyId"></tbody>
+        <tfoot>
+            <tr>
+                <th>id</th>           
+                <th>title</th>
+                <th>completed</th>
+            </tr>
+        </tfoot>
+        `
+            for (const todo of todos) {
+                let newRow = tbodyId.insertRow()
+                newRow.insertCell().innerText = todo.id
+                newRow.insertCell().innerText = todo.title
+                newRow.insertCell().innerText = todo.completed
+                if (todo.completed) {
+                    newRow.style.textDecoration = 'line-through'
+                }
+            }
+        }
     </script>
-
-
 </body>
 </html>
