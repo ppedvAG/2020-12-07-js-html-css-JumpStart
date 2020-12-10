@@ -1,48 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects</title>
+    <title>OBJECTS</title>
 </head>
+
 <body>
-    <h1>Objects</h1>
+    <h1>OBJECTS</h1>
+    <pre>
+        Theorie:
+
+    </pre>
+    <hr>
+    <h2>anonyme Objekte</h2>
+    <pre>Objekte ohne Namen
+        alle vom Entwickler angelegte Objekte sind abgeleitet von Object
+        Key:Value Paare werden durch ein Komma aufgelistet
+    </pre>
+    <p id="p1"></p>
     <script>
-        let stringPrimitive = 'simpleString'
-        let stringObject = new String('stringValue');
-        console.log('typeof stringPrimitive :>> ', typeof stringPrimitive); // string
-        console.log('typeof stringObject :>> ', typeof stringObject); // object
-        console.log('stringObject :>> ', stringObject); // String {"stringValue"}
-        console.log('stringObject[2] :>> ', stringObject[2]); // r
-        console.log('stringObject.indexOf("r") :>> ', stringObject.indexOf('r'));
+        console.log('{key: "wertVomKey"} :>> ', { key: 'wertVomKey' });
+        p1.innerText = { key: 'wertVomKey' }.toString();
+    </script>
+    <hr>
+    <h2>bennante Objekte erzeugt ohne Konstruktor</h2>
+    <pre>
+werden in eine Variable mit Namen gespeichert
 
-        console.log('aus einem Objekte eine Primitive bekommen:');
-        console.log('stringObject.valueOf() :>> ', stringObject.valueOf()); //stringValue
-        console.log('typeof stringObject.valueOf() :>> ', typeof stringObject.valueOf()); //string
-
-        console.log("Darf ich String-Methoden auch bei der string-Primitive anwenden?");
-        console.log('stringPrimitive.indexOf("t") :>> ', stringPrimitive.indexOf("t")); // 7
-        console.log('stringPrimitive.length :>> ', stringPrimitive.length); // 12
-
-        let etwas = String();
-        console.log('etwas :>> ', etwas);
-        console.log('typeof etwas :>> ', typeof etwas); // string
-        etwas = String(4);
-        console.log('etwas :>> ', etwas); // 4
-        etwas = String([4, 2, 45])
-        console.log('etwas :>> ', etwas);
-        console.log('typeof etwas :>> ', typeof etwas); // string
-
-        let array = [3,2,1,6]
-        console.log('array :>> ', array);
-        console.log('array.toString() :>> ', array.toString());
-
-        console.log('typeof ([] + "") :>> ', typeof ([] + "")); // string
-        console.log('typeof ([] + 3) :>> ', typeof ([] + 3)); // string
-        console.log('typeof ([] + object) :>> ', typeof ([] + {})); // string
+    </pre>
+    <p id="p2"></p>
+    <script>
+        let Person = { firstName: 'Max', lastName: 'Mustermann', age: 30, adresse: 'Hauptstraße 1' }
+        p2.innerText = Person.lastName;
+    </script>
+    <hr>
 
 
+    <h2>Objekte ohne Konstruktor, mit Methoden</h2>
+    <p id="p3"></p>
+    <script>
+        let Person2 = {
+            firstName: 'Max',
+            lastName: 'Mustermann',
+            age: 30,
+            address: 'Hauptstraße 1',
+            changeAddress: function (newAddress) {
+                // this.address = newAddress;
+                // return this.address;
+                address = newAddress;
+                return address;
+            }
+        }
+        p3.innerText = Person2.changeAddress('Wichertstraße 10')
+        // let person2 = new Person2(); // Uncaught TypeError: Person2 is not a constructor
 
     </script>
+    <hr>
+
+
+
+    <h2>Constructors</h2>
+    <pre>
+        Durch Konstruktoren können wir die Shapes für die zukünftigen Objekte definieren
+    </pre>
+    <script>
+        function Person3(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        let person3 = new Person3('Max3', 'Mustermann3');
+        console.log('person3 :>> ', person3); // Person3 {firstName: "Max3", lastName: "Mustermann3"}
+        console.log('typeof person3 :>> ', typeof person3); // object
+    </script>
+    <hr>
+
+
+
+    <h2>Vergleichen von Objekten</h2>
+    <pre>
+        Objekte beim Vergleich liefern false, weil es Referenztypen sind
+    </pre>
+    <script>
+        let person4 = new Person3('Max3', 'Mustermann3');
+        console.log('person4 :>> ', person4);
+
+        console.log('person3 == person4 :>> ', person3 == person4); // false
+        console.log('typeof person3 == typeof person4 :>> ', typeof person3 == typeof person4); // true
+    </script>
+    <hr>
+
+
+    <h2>Verschachtelte Objekte</h2>
+    <pre>
+für die einzelnene Objekte Konstruktoren anlegen.
+nur ein Konstruktor wird als Argument Instanz annehmen, die mit anderem Konstruktor erzeugt wurde.
+    </pre>
+    <p id="p5"></p>
+    <script>
+        function Person5(firstName, lastName, address) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.address = address;
+        }
+        function Address(city, street, housenumber, postcode) {
+            this.city = city;
+            this.street = street;
+            this.housenumber = housenumber;
+            this.postcode = postcode;
+        }
+
+        let p5Address = new Address('Berlin', 'Sonnenallee', 1, 12000)
+
+        let person5 = new Person5('Vorname', 'Nachname', p5Address)
+        p5.innerText = person5.address.street;
+    </script>
+    <hr>
+
+
+
+    <h2>Objekte in JS sind dynamisch</h2>
+    <pre>
+        neue Props können einfach durch Punktnotation hinzugefügt werden.
+        Mit dem Schlüsselwort delete können die Props auch dynamisch gelöscht werden.
+    </pre>
+    <p id="p6"></p>
+    <script>
+        function Todo(id, title, completed) {
+            this.id = id;
+            this.title = title;
+            this.completed = completed;
+        }
+        let todo = new Todo(1, 'Post abholen', false);
+
+        person5.todo = todo;
+        p6.innerText = person5.todo.title
+
+        delete person5.address
+        console.log('person5 :>> ', person5);
+
+    </script>
+    <hr>
+
+
+
+    <h2>Objekte mit Konstruktoren und Methoden</h2>
+    <p id="p7"></p>
+    <script>
+        function StarteAuto(gestartet) {
+            this.istGestartet = gestartet;
+        }
+        function Auto(modell, baujahr, istGestartet) {
+            this.modell = modell;
+            this.baujahr = baujahr;
+            this.istGestartet = istGestartet;
+            this.StarteAuto = StarteAuto;
+        }
+
+        let auto = new Auto('VW Polo', 2015, false);
+        auto.StarteAuto(true);
+        p7.innerText = auto.istGestartet; // true    
+    </script>
+
+    <hr>
+
+
+    <h2>Operatoren für Objekte</h2>
+    <p id="p8"></p>
+    <p id="p9">Objekt ServiceWorker existiert im Objekt Navigator: </p>
+    <script>
+        p8.innerText = auto instanceof Auto; // true
+        p9.innerText += 'serviceWorker' in navigator; // true
+    </script>
+    <hr>
+
+
+
 </body>
+
 </html>

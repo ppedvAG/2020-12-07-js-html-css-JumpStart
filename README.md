@@ -6,61 +6,89 @@ Datum: 07.12.2020; Ort: VC; Format: Teilzeit
 
 [Agenda vom Kurs auf ppedv.de](https://ppedv.de/schulung/kurse/JavaScript-HTML-Programmierung-Client-CSS-Syntax-Event-Cookie.aspx)
 
+Trainer: Vadzim Naumchyk
+
 ## M00 | WARMING UP
 
 - [x] Greeter
 - [x] VS Code kennenlernen
 - [x] Git, GitHub, Repository
+- [x] [Shortcuts text editors](vadzim/SHORTCUTS-ANY-TEXT-EDITOR.md)
+- [x] [Shortcuts vscode](vadzim/SHORTCUTS-VSCODE.md)
 - [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/2dce103f59c62f9d8cec6a383ad17a6f23b6c2bb)
 
 ## M01 | HTML GETTING STARTED
 
-- [x] Demo: [html basics & emmet](vadzim/html-hellohtml.html)
+- [x] [Demo](vadzim/html-hellohtml.html)
 - [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/3c2b71c1766fbdb9bc0fd34dbf457947ab2c16e9)
 
 ## M02 | CSS GETTING STARTED
 
-- [ ] Commit: 
+- [x] [Demo](vadzim/css-hellocss.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/fa455601a4354f6d6fbde105f19b8b16c175cf1b)
 
 ## M03 | JS GETTING STARTED
 
-- [ ] Ausdrücke & Anweisungen
-- [ ] Commit: 
+- [x] Ausdrücke & Anweisungen
+- [x] [Demo](vadzim/js-hellojs.html)
+- [x] [Übung](vadzim/uebungen/zufallszahl.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/a19de3c164d85c5d1952881646cff673caa3d217)
 
 ## M04 | JS SCOPES & VARIABLES
 
-- [ ] Commit: 
+- [x] [Demo window scope & object](vadzim/js-window.html)
+- [x] [Demo scopes](vadzim/js-scopes.html)
+- [x] [Demo wrapper objects](vadzim/js-wrapper-objects.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/627dbb51c493fa5f98bd5687866dcb77869e1b87)
 
 ## M05 | DOM INTRO & TRAVERSING
 
-- [ ] Zusammenhang zwischen DOM, HTML, CSS & JS
-- [ ] [dom-traversing.html]
-- [ ] Commit:
+- [x] Zusammenhang zwischen DOM, HTML, CSS & JS
+- [x] [Demo](vadzim/dom-traversing.html)
+- [x] [Übung](vadzim/uebungen/img-zoom.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/c11d0c8a3b19f333c21aaca12467839df3ae3722)
 
 ## M06 | FUNCTIONS
 
-- [ ] Callbacks
-- [ ] Function Variables
-- [ ] Arrow functions & this
-- [ ] [Demo](js-functions.html)
-- [ ] [Übung](uebungen/js-functions-u.html)
-- [ ] commit
+- [x] Callbacks
+- [x] Function Variables
+- [x] Arrow functions & this
+- [x] [Demo](vadzim/js-functions.html)
+- [x] [Übung](vadzim/uebungen/js-functions-u.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/f7da6bfb1b085d62cc04e91fffc213e0050c3ad8)
 
 ## M07 | CSS UNITS
 
-commit
+- [x] [Demo](vadzim/css-units.html)
+- [x] [Übung](vadzim/uebungen/css-units-u.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/f45f327be8ab7be1943f362c73f83d8fdf28edbc)
 
 ## M08 | DOM MANIPULATION
 
-- [ ] Commit
+- [x] [Demo](vadzim/dom-manipulation.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/f0d68dca4e40fb7e470850ec72c4d37f117e04bf)
 
 ## M09 | JS CONDITIONS, FETCH, JS TABLE
 
+- [x] [Demo conditions](vadzim/js-conditions.html)
+- [x] [Demo table](vadzim/js-tables.html)
+- [x] [Demo fetch](vadzim/js-fetch.html)
+- [x] [Übung](vadzim/uebungen/gefetchteDaten-in-table.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/47650e3d0818210c9a334232d6ecb27e9c090b98)
 
-## M06 | JS OBJECTS
+## M10 | JS OBJECTS
 
-- [ ] Konstruktoren
-- [ ] [js-objects.html]
+- [x] Konstruktoren
+- [x] [Demo](vadzim/js-objects.html)
+- [ ] [Commit]()
+
+## MXX | JS CLASSES
+
+- [ ] [js-classes.html]
+
+## MXX | REACT
+
+- [ ] Einblick ins React & Angular
 
 ## MXX | EVENTS
 
@@ -69,20 +97,19 @@ commit
 - [ ] Events Bubbling
 - [ ] commit
 
-## MXX | JS CLASSES
-
-## MXX | JS INTERMEDIATE
+## MXX | ASYNCHRONOUS CODE FLOW
 
 - [ ] [js-promises1.html]
 - [ ] [js-promises2.html]
 - [ ] [js-promises3.html]
+- [ ] asynchronous functions
+
+## MXX | WORKERS
+
 - [ ] [js-workers.html]
 - [ ] [js-serviceworker.html]
-- [ ] [js-classes.html]
 
-## gewünscht:
 
-- [ ] Einblick ins React & Angular
 
 ## JQUERY ##
 
