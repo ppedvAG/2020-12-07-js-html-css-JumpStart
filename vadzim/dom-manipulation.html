@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANIPULATION</title>
+</head>
+<body id="body">
+    <h1 name=h1Id>DOM MANIPULATION</h1>
+    <div id="container"></div>
+
+    <script>
+        let newElement = document.createElement('article');
+        let contenForArticle = document.createTextNode('inhalt für Artikel')
+        newElement.appendChild(contenForArticle);
+
+        document.getElementById('container').appendChild(newElement);
+        let elementsToRemove = document.getElementsByName('h1Id')
+        console.log('elementsToRemove :>> ', elementsToRemove); // NodeList [h1]
+        let docBody = document.getElementById('body')
+        console.log('docBody :>> ', docBody);
+        // parentNode.removeChild(childNode)
+        docBody.removeChild(elementsToRemove[0]);
+        /* https://developer.mozilla.org/de/docs/Web/API/Node/removeChild */
+
+
+    </script>
+    
+</body>
+</html>
