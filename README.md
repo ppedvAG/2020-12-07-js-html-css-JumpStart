@@ -80,13 +80,14 @@ Trainer: Vadzim Naumchyk
 
 - [x] Konstruktoren
 - [x] [Demo objects](vadzim/js-objects.html)
-- [ ] [Demo this](vadzim/js-this.html)
-- [ ] [Übung](vadzim/uebungen/js-objects-u.html)
-- [ ] [Commit]()
+- [x] [Demo this](vadzim/js-this.html)
+- [x] [Übung](vadzim/uebungen/js-objects-u.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/b0b1697d8719308f4d10d9486a717f51476f8558)
 
 ## MXX | JS CLASSES
 
-- [ ] [js-classes.html]
+- [ ] [Demo](vadzim/js-classes.html)
+- [ ] [Commit]()
 
 ## MXX | REACT
 

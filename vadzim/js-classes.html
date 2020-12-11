@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSES</title>
+</head>
+
+<body>
+    <h1>CLASSES</h1>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <script>
+
+        // Konstruktor für Objekttyp Transportmittel
+        function Transportmittel(modell, maxGeschw, preis, aktGesch, istAn) {
+            // mit Optionalen Argumenten
+            // function Transportmittel(modell, maxGeschw, preis, aktGesch=0, istAn = false) {
+            // mit festgesetzten Properties
+            // function Transportmittel(modell, maxGeschw, preis) {
+            // this.AktGeschw = 0
+            // this.IstAn = false
+            this.Modell = modell
+            this.MaxGeschw = maxGeschw
+            this.Preis = preis
+            this.AktGeschw = aktGesch
+            this.IstAn = istAn
+            this.Beschleunige = (km) => {
+                let neueGeschw = this.AktGeschw + km
+                if (neueGeschw <= this.MaxGeschw) {
+                    this.AktGeschw = neueGeschw
+                    return `erfolgreich beschleunigt auf Geschwindigkeit: ${this.AktGeschw}`
+                }
+                else {
+                    this.AktGeschw = this.MaxGeschw
+                    return `sie möchten zu schnell fahren, aktGesch gesetzt auf Maximum: ${this.AktGeschw}`
+                }
+            }
+            this.Bremse = (km) => {
+                let neueGeschw = this.AktGeschw - km
+                if (neueGeschw > 0) {
+                    this.AktGeschw = neueGeschw
+                    return `erfolgreich gebremst auf Geschwindigkeit: ${this.AktGeschw}`
+                }
+                else {
+                    this.AktGeschw = 0
+                    return `aktGesch gesetzt auf null: ${this.AktGeschw}`
+                }
+            }
+            this.StarteMotor = () => {
+                this.IstAn = true
+            }
+            this.StoppeMotor = () => {
+                this.IstAn = false
+            }
+            this.BeschreibeDich = () => {
+                return `Modell: ${this.Modell} 
+                MaxGeschw: ${this.MaxGeschw} 
+                Preis: ${this.Preis} 
+                AktGeschw: ${this.AktGeschw} 
+                IstAn: ${this.IstAn}`
+            }
+        }
+        let transportmittel = new Transportmittel('BMW', 250, 100000)
+        // output1.innerText = transportmittel.BeschreibeDich();
+        // output2.innerText = transportmittel.Beschleunige(330);
+        // output3.innerText = transportmittel.Bremse(50);
+        console.log('transportmittel.AktGeschw :>> ', transportmittel.AktGeschw);
+
+        // Frage: Kann ich aus dieser leeren Klasse schon eine Instanz erstellen?
+        // class TransportmittelKlasse {
+        // }
+        // let transportmittelKlasse = new TransportmittelKlasse();
+        // console.log('transportmittelKlasse :>> ', transportmittelKlasse);
+
+        class TransportmittelKlasse {
+            constructor(modell, maxGeschw, preis){
+                this.Modell = modell
+                this.MaxGeschw = maxGeschw
+                this.Preis = preis
+            }
+            // Frage: darf ich mehrere Konstruktoren in JS-Klassen angeben?
+            // Uncaught SyntaxError: A class may only have one constructor 
+            // constructor(modell, maxGeschw, preis, aktGesch, istAn){
+            //     this.Modell = modell
+            //     this.MaxGeschw = maxGeschw
+            //     this.Preis = preis
+            //     this.AktGeschw = aktGesch
+            //     this.IstAn = istAn
+            // }
+            
+            // in JS sind keine private Members möglich, stattdessen verwendet man Closures
+        }
+        let transportmittelKlasse1 = new TransportmittelKlasse('BMW', 250, 100000);
+        console.log('transportmittelKlasse1 :>> ', transportmittelKlasse1);
+
+        class Schiff extends TransportmittelKlasse {
+            constructor(modell, maxGeschw, preis, anzPassagiere, kannLastenTransportieren){
+                super(modell, maxGeschw, preis)
+                this.AnzPassagiere = anzPassagiere
+                this.KannLastenTransportieren = kannLastenTransportieren
+            }           
+        }
+        let schiff = new Schiff('Titanic', 100, 2000000, 6000, true)
+        // Frage: ist schiff eine Instanz von Schiff
+        console.log('schiff instanceof Schiff :>> ', schiff instanceof Schiff); // true
+        // Frage: auch Instanz von TransportmittelKlasse?
+        console.log('schiff instanceof TransportmittelKlasse :>> ', schiff instanceof TransportmittelKlasse); // true
+        // Instanzen von den erweiterten Klassen sind auch Instanzen von den Superklassen
+    </script>
+</body>
+
+</html>
