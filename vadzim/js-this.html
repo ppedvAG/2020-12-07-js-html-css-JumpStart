@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIS</title>
+</head>
+
+<body>
+    <h1>THIS</h1>
+    <script>
+        // Frage: Worauf bezieht sich this im globalen Scope?
+        // console.log('this :>> ', this); // this = Window
+
+
+        // Frage: Worauf bezieht sich this in einer benannten Funktion?
+        // function fctName() {
+        //     console.log('this in fctName2:>> ', this);
+        // }
+        // fctName2(); // this = Window
+
+
+        // Frage: Worauf bezieht sich this in einer benannten Funktion übergeben an eine Variable?
+        // let functionVariable = fctName;
+        // functionVariable(); // this = Window
+
+
+        // Frage: Worauf bezieht sich this in einer anonymen Funktion, übergeben an eine Variable?
+        // functionVariable = function () {
+        //     console.log('this in fctName2:>> ', this);
+        // }
+        // functionVariable(); // this = Window
+
+
+        // Frage: Worauf bezieht sich this in einer Pfeilfunktion, übergeben an eine Variable?
+        // functionVariable = () => {
+        //     console.log('this in fctName2:>> ', this);
+        // }
+        // functionVariable(); // this = Window
+
+
+        /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+        /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+        /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+        // Also this ignoriert die Scopes von Funktionen in jeder Form?
+
+
+        // Frage: Worauf bezieht sich this einer Objekt-Methode?
+        // function MyComponentMethod() {
+        //         console.log(this) // this = MyComponent
+        // }
+
+
+        // Frage: Und wenn ich eine Anweisung später ausführen möchte?
+        // function MyComponentMethod() {
+        //     setTimeout(console.log(this), 2000) // this = MyComponent, aber die Konsolenausgabe wird sofort ausgeführt, man braucht hier nur eine Funktionendefinition
+        // }
+
+
+        // Frage: Okay, ich hab eine anonyme Funktion angelegt. Wird sie jetzt verzögert ausgeführt?
+        // function MyComponentMethod() {
+        //     setTimeout(function () {
+        //         console.log(this); // this = Window, die anonyme Funktion hat die Scopes durcheinander gebracht, als ob sie direkt im globalen Scope angelegt würde
+        //     }, 2000)
+        // }
+
+
+        // Frage: this bezieht sich wieder auf Window. Als ob man setTimeout direkt in Window-Scope ausführen würde, ja?
+        // setTimeout(function () {
+        //     console.log(this) // this = Window
+        // }, 2000)
+
+
+        // Frage: Und wenn ich die anonyme Funktion in Pfeilnotation schreibe?
+        // setTimeout(() => {
+        //         console.log(this); // this = Window
+        // }, 2000)
+
+
+        // Frage: Und wenn ich das gleiche im Scope vom Objekt ausführe?
+        // function MyComponentMethod() {
+        //     setTimeout(() => {
+        //         console.log(this); 
+        //     }, 1000)
+        // }
+        // MyComponentMethod(); // this = Window
+
+        function MyComponent(foo) {
+            this.foo = foo
+            // this.mcmethod = MyComponentMethod
+
+
+            // Frage: wenn ich die Methode direkt hier definiere?
+            // this.mcmethod = function () {
+            //     setTimeout(function () {
+            //         console.log(this) // this = Window
+            //     }, 2000)
+            // }
+
+            // Frage: Was muss ich ändern, um die Scopes anzupassen?
+            this.mcmethod = function () {
+                setTimeout(() => {
+                    console.log(this) // this = MyComponent
+                }, 2000)
+            }
+        }
+
+        let myComp = new MyComponent('foo');
+        // Frage: Und wenn ich das gleiche im Scope vom Objekt ausführe?
+        myComp.mcmethod(); // this = MyComponent
+
+
+
+
+    </script>
+</body>
+
+</html>

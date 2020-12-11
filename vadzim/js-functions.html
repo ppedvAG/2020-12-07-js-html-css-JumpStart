@@ -14,17 +14,19 @@
         let functionVariable = function fctName() {
             p1.innerText = 'newValue'
         }
-        console.log('functionVariable :>> ', functionVariable);
-        console.log('typeof functionVariable :>> ', typeof functionVariable); // function
+        // console.log('functionVariable :>> ', functionVariable);
+        // console.log('typeof functionVariable :>> ', typeof functionVariable); // function
         // fctName(); // not defined
         // functionVariable();
 
         function fctName2() {
             p1.innerText = this.valueOf();
             console.log('hallo aus fctName2');
+            console.log('this in fctName2:>> ', this); // this in benannten Funktionen bezieht sich auf Window
         }
+        fctName2(); // this = Window
         let functionVariable1 = fctName2;
-        // functionVariable1();
+        // functionVariable1(); // this = Window
 
         let functionVariable2 = function () {
             p1.innerText = 'newValue durch anonyme Fct'
@@ -44,7 +46,7 @@
 
 
         let functionVariable5 = v => p1.innerText = v.length;
-        functionVariable5('text'); //
+        // functionVariable5('text'); //
     </script>
     <hr>
 

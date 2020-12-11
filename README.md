@@ -79,7 +79,9 @@ Trainer: Vadzim Naumchyk
 ## M10 | JS OBJECTS
 
 - [x] Konstruktoren
-- [x] [Demo](vadzim/js-objects.html)
+- [x] [Demo objects](vadzim/js-objects.html)
+- [ ] [Demo this](vadzim/js-this.html)
+- [ ] [Übung](vadzim/uebungen/js-objects-u.html)
 - [ ] [Commit]()
 
 ## MXX | JS CLASSES
