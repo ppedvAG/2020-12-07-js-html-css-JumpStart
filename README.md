@@ -122,18 +122,20 @@ Trainer: Vadzim Naumchyk
 - [ ] Übung: neues Handy fürs Weihnachten
 - [ ] commit
 
+## M16 | DESTRUCTURING
+
+- [ ] Function as Return
+- [ ] immidiate Call of Functions
+- [ ] destructuring by arrays
+- [ ] commit
+
 ## MXX | WORKERS
 
 - [ ] [js-workers.html]
 - [ ] [js-serviceworker.html]
 - [ ] commit
 
-## MXX | DESTRUCTURING
 
-- [ ] Function as Return
-- [ ] immidiate Call of Functions
-- [ ] destructuring by arrays
-- [ ] commit
 
 ## JQUERY ##
 

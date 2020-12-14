@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTRUCTURING</title>
+</head>
+
+<body>
+    <h1>DESTRUCTURING</h1>
+    <h2>Destructuring von Arrays</h2>
+    <pre>um elemente aus einem Array als einzelne Variablen benutzen:</pre>
+    <script>
+        function createState(initialStateValue) {
+            let actuelState = initialStateValue;
+            let setNewState = (newState) => {
+                actuelState = newState
+                return actuelState
+            }
+            let myArray = [actuelState, setNewState]
+            return myArray
+        }
+        console.log('createState(3) :>> ', createState(3));
+
+        let [myState, mySetState] = createState(3)
+        console.log('myState :>> ', myState);
+        // mySetState(5);
+        console.log('mySetState(5) :>> ', mySetState(5));
+        myState = mySetState(7);
+        console.log('myState :>> ', myState);
+
+    </script>
+    <hr>
+
+    <h2>Destructuring von Objekten</h2>
+    <script>
+        let myTodo = {id: 3, title: 'lorem ipsum', completed: false}
+        let todosTitle = myTodo.title;
+        console.log('todosTitle :>> ', todosTitle);
+        // oder ich nenne meine Variable genau wie die Property
+        let { title } = myTodo;
+        console.log('title :>> ', title);        
+    </script>
+</body>
+</html>
