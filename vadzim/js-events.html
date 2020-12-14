@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+</head>
+
+<body>
+    <h1>EVENTS</h1>
+    <h2>Event Attributes</h2>
+    <pre>
+Als Wert akzeptiert das onclick-Attribut, Anweisungen und Funktionen
+bei allen drei Buttons die Property onclick beinhaltet: onclick(event)
+    </pre>
+    <!-- Variante 1 -->
+    <button onclick="output1.innerText += 'Button geklickt'">ClickEvent</button>
+    <!-- Variante 2 -->
+    <button onclick="(function handleClick() {output1.innerText += 'Button geklickt'})()">ClickEvent</button>
+    <!-- Variante 3 -->
+    <button onclick="handleClick()">ClickEvent</button>
+    <p id="output1">output</p>
+    <script>
+        // Alternative:
+        // Die Funktion erstmal deklarieren, und dann dem onclick-Handler übergeben
+        function handleClick() { output1.innerText += 'Button geklickt' }
+    </script>
+    <hr>
+
+
+    <h2>events ohne Attributes, event Listeners</h2>
+    <pre>
+es wird abgeraten, JS und HTML zu mischen.
+Events müssen in diesem Fall auf einen anderen Weg abgefangen werden
+addEventListener('eventName', eventHandler) // ohne runde Klammern beim Handler
+    </pre>
+    <button id="btn">button ohne onclick</button>
+    <p id="output2"></p>
+    <script>
+        btn.addEventListener('click', handleClick2)
+        function handleClick2() {
+            output2.innerText = 'click über event listener'
+        }
+    </script>
+<hr>
+
+
+<h2>Objekte Event und EventTarget</h2>
+<pre>
+Egal ob der Eventhandler auf Argumente wartet oder nicht, kann er immer auf das Objekt 'event' zugreifen
+event.target zeigt auf das Element, an welchem das Event abgefangen wurde.
+Nicht zu verwechseln mit dem Objekt EventTarget
+HTMLButtonElement - HTMLElement - Element - Node - EventTarget
+</pre>
+<button id='btn2'>show event object</button>
+<p id="output3"></p>
+<script>
+    btn2.addEventListener('click', handleClick3)
+    function handleClick3() {
+            output3.innerText = event // object MouseEvent
+            console.log('event :>> ', event);
+            // output3.innerText = event.target.innerText // event object
+            console.log('event.target :>> ', event.target.__proto__);
+            
+        }
+</script>
+<hr>
+
+
+<h2>Eventtypen</h2>
+<pre>
+    AnimationEvent
+    AnimationPlaybackEvent
+    AudioProcessingEvent
+    BeforeInstallPromptEvent
+    BeforeUnloadEvent
+    BlobEvent
+    CookieChangeEvent
+    CustomEvent
+    DeviceMotionEvent
+    DeviceOrientationEvent
+    DragEvent
+    ErrorEvent
+    FocusEvent
+    FontFaceSetLoadEvent
+    FormDataEvent
+    GamepadEvent
+    
+KeyboardEvent
+MouseEvent
+MutationEvent
+TouchEvent
+</pre>
+<button id="btn3">show event type</button>
+<script>
+btn3.addEventListener('click', handleClick4)
+
+// auf eine Funktiondeklaration können wir auch früher zugreifen
+function handleClick4 () {
+    this.innerText = event.__proto__; // object MouseEvent
+    this.innerText = event instanceof MouseEvent; // true
+}
+
+// ist unsere Funktion erstmal in eine Variable gespeichert, 
+// so auf die Variablen darf man erst nach derer Deklaration zugreifen
+// let handleClick4 = () => {
+//     this.innerText = event instanceof MouseEvent; // true
+// }
+</script>
+<hr>
+
+
+<h2>Events Bubbling</h2>
+<div id=div1 ><button id=btn4>show bubble</button></div>
+<script>
+    // div1.addEventListener('click', handleClick5)
+    div1.addEventListener('click', handleClick5)
+    function handleClick5() {
+        console.log('this :>> ', this);
+        console.log('event :>> ', event);
+    }
+    btn4.click() // div fängt das Click-Event auch ab
+    // btn4.dispatchEvent(new Event('click')) // funktioniert nicht
+    /* todo #6 */
+let myEvent = new MouseEvent('click');
+console.log('myEvent :>> ', myEvent);
+
+
+</script>
+</body>
+
+</html>

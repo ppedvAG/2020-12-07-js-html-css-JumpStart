@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PW CONFIRM</title>
+</head>
+
+<body>
+    <h1>PW CONFIRM</h1>
+    <pre>
+        Formular
+        - 2 inputs
+        - button
+        button bleibt so lange inaktiv, bis in beiden inputs irgendwas steht und die Eingaben in den beiden übereinstimmen
+        Welches Event müssen abfangen?
+        Mit wievielen Handlern können wir auskommen?
+        evtl an Validität bei Formularen denken
+    </pre>
+
+    <input id=inp1 type="text">
+    <input id=inp2 type="text">
+    <button id=btn>confirm</button>
+
+    <script>
+        console.log('btn :>> ', btn);
+        btn.disabled = true
+        inp1.addEventListener('input', changeHandler)
+        inp2.addEventListener('input', changeHandler)
+        function changeHandler() {
+            if (inp1.value != '' && inp2.value != '' && inp1.value == inp2.value) {
+                btn.disabled = false
+                btn.innerText += 'bestätigt'
+            }
+        }
+/* Bennet: 
+todo #5
+        // input1.addEventListener('input', eventHandler1)
+        // input2.addEventListener('input', eventHandler2)
+        let test1, test2;
+        enableButton()
+        function eventHandler1() {​​​​​
+            test1 = input1.value;
+            enableButton()
+        }​​​​​
+        function eventHandler2() {​​​​​
+            test2 = input2.value;
+            enableButton()
+        }​​​​​
+        function enableButton() {​​​​​
+            if(test1 == test2 && test1 != '' && test2 !='') {​​​​​
+                btn.disabled = false;
+            }​​​​​
+            else {​​​​​
+                btn.disabled = true;
+            }​​​​​
+        }​​​​​
+     */
+    </script>
+
+</body>
+
+</html>

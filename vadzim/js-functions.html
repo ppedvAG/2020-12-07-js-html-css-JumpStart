@@ -52,17 +52,38 @@
 
     <h2>Funktionen als Callbacks</h2>
     <p>Aktuelles Datum: <span id="uhr"></span></p>
-<script>
-    console.log('Funktionen als Callbacks');
-    setInterval(() => {
-        uhr.innerText = Date();
-    }, 1000);
+    <script>
+        console.log('Funktionen als Callbacks');
+        setInterval(() => {
+            uhr.innerText = Date();
+        }, 1000);
 
-    setInterval(fctName2, 2000); // also alle Funktionsdeklarationen ohne Aufruf sind hier erlaubt
+        setInterval(fctName2, 2000); // also alle Funktionsdeklarationen ohne Aufruf sind hier erlaubt
     // setInterval(fctName2(), 2000); // auf diese Weise wird die Funktion fctName2 nur einmal ausgeführt
 
 
-</script>
+    </script>
+    <hr>
+
+
+    <h2>Aufruf über Deklaration vs über Variable</h2>
+    <button id="btn3">show event type</button>
+    <script>
+        btn3.addEventListener('click', handleClick4)
+
+        // auf eine Funktiondeklaration können wir auch früher zugreifen
+        function handleClick4() {
+            this.innerText = event.__proto__; // object MouseEvent
+            this.innerText = event instanceof MouseEvent; // true
+        }
+
+// ist unsere Funktion erstmal in eine Variable gespeichert, 
+// so auf die Variablen darf man erst nach derer Deklaration zugreifen
+// let handleClick4 = () => {
+//     this.innerText = event instanceof MouseEvent; // true
+// }
+    </script>
+
 
 
 
