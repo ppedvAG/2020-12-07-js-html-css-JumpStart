@@ -84,14 +84,16 @@ Trainer: Vadzim Naumchyk
 - [x] [Übung](vadzim/uebungen/js-objects-u.html)
 - [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/b0b1697d8719308f4d10d9486a717f51476f8558)
 
-## MXX | JS CLASSES
+## M11 | JS CLASSES
 
-- [ ] [Demo](vadzim/js-classes.html)
-- [ ] [Commit]()
+- [x] [Demo](vadzim/js-classes.html)
+- [x] [Commit](https://github.com/ppedvAG/2020-12-07-js-html-css-JumpStart/commit/57172b4dbcaf800c887d31c80e59f4413b2d2c08)
 
 ## MXX | REACT
 
 - [ ] Einblick ins React & Angular
+- [ ] Demo
+- [ ] Commit
 
 ## MXX | EVENTS
 
@@ -99,6 +101,12 @@ Trainer: Vadzim Naumchyk
 - [ ] Event types
 - [ ] Events Bubbling
 - [ ] commit
+
+## MXX | EXCEPTIONS
+
+- [ ] TypeError
+- [ ] SyntaxError
+- [ ] try catch
 
 ## MXX | ASYNCHRONOUS CODE FLOW
 
@@ -112,7 +120,11 @@ Trainer: Vadzim Naumchyk
 - [ ] [js-workers.html]
 - [ ] [js-serviceworker.html]
 
+## MXX | DESTRUCTURING
 
+- [ ] Function as Return
+- [ ] immidiate Call of Functions
+- [ ] destructuring by arrays
 
 ## JQUERY ##
 
