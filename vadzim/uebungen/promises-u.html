@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        frage nach einem Handy zu Weihnachten
+    </pre>
+    <script>
+        let MuttiInGuterLaune = true
+
+        let myPromise = new Promise((resolve, reject) => {
+            if (MuttiInGuterLaune) {
+                let newPhone = {
+                    marke: 'iPhone',
+                    color: 'silver'
+                }
+                resolve(newPhone)
+            } else {
+                let grund = new Error('Mutti schlecht gelaunt')
+                reject(grund)
+            }
+
+        })
+
+        let fragMutti = function () {
+            myPromise
+                .then((erfolg) => { console.log(erfolg); })
+                .catch((err) => {
+                    console.log('err.message :>> ', err.message);
+                })
+        }
+
+        fragMutti()
+
+    </script>
+</body>
+
+</html>

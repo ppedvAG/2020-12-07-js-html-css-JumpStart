@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALLBACKS</title>
+</head>
+<body>
+    <h1>CALLBACKS</h1>
+    <h2>Eigene Funktion definieren, die andere Funktionen als Argument hat</h2>
+    <script>
+        const teilnehmerGegangen = false
+        const teilnehmerIstImHandy = false
+
+        // Definition
+        function learnJS(callback1, callback2) {
+            if (teilnehmerGegangen) {
+                // Deklaration von Collback2 nimmt ein Objekt als Argument
+                callback2({
+                    name: 'teilnehmer hatte kein Bock mehr',
+                    message: 'so ist das Leben'
+                })
+            } else if (teilnehmerIstImHandy) {
+                callback2({
+                    name: 'teilnehmer ist in Insta',
+                    message: 'Insta vs JS'
+                })
+            } else {
+                // Deklaration von Callback1 nimmt ein String als Argument
+                callback1('Daumen hoch')
+            }
+        }
+
+        learnJS((message)=>{
+            console.log('Erfolgreich: ' + message);
+        }, (fail)=>{
+            console.log(fail.name + ' ' + fail.message);
+        })
+        // wie es in Promise-Format aussieht, siehe js-promises.html
+    </script>
+    <hr>
+</body>
+</html>

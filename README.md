@@ -105,15 +105,16 @@ Trainer: Vadzim Naumchyk
 
 ## M14 | EXCEPTIONS
 
-- [ ] TypeError
-- [ ] SyntaxError
-- [ ] ReferenceError
-- [ ] try catch throw
-- [ ] Übung: Arrays, outOfBounds oder Element nicht vorhanden
-- [ ] commit
+- [x] TypeError
+- [x] SyntaxError
+- [x] ReferenceError
+- [x] try catch throw
+- [x] Übung: Arrays, outOfBounds oder Element nicht vorhanden
+- [x] commit
 
-## MXX | ASYNCHRONOUS CODE FLOW
+## M15 | ASYNCHRONOUS CODE FLOW
 
+- [ ] callbacks
 - [ ] [js-promises1.html]
 - [ ] [js-promises2.html]
 - [ ] [js-promises3.html]

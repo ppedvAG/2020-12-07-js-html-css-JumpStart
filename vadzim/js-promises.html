@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMISES</title>
+</head>
+
+<body>
+    <h1>PROMISES</h1>
+    <script>
+        const teilnehmerGegangen = false
+        const teilnehmerIstImHandy = true
+
+        function learnJS() {
+            return new Promise((resolve, reject) => {
+                if (teilnehmerGegangen) {
+                    reject({
+                        name: 'hatte kein Bock',
+                        message: 'so ist das Leben'
+                    })
+                } else if (teilnehmerIstImHandy) {
+                    reject({
+                        name: 'teilnehmer ist in Insta',
+                        message: 'Insta vs JS'
+                    })
+                } else {
+                    resolve('Daumen hoch')
+                }
+            })
+        }
+
+        learnJS()
+        .then((message)=>{console.log('Erfolgreich: ' + message)})
+        .catch((fail)=>{console.log(fail.name + ' ' + fail.message)})
+    </script>
+</body>
+
+</html>
