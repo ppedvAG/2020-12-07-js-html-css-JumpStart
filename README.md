@@ -97,18 +97,17 @@ Trainer: Vadzim Naumchyk
 
 ## M13 | EVENTS
 
-- [ ] Event Object
-- [ ] Event types
+- [x] Event Object
+- [x] Event types
 - [ ] Events Bubbling
-- [ ] Übung: Formulare
-- [ ] commit
+- [x] Übung: Formulare
+- [x] commit
 
-## direktes Ausführen vom Methoden
-
-## MXX | EXCEPTIONS
+## M14 | EXCEPTIONS
 
 - [ ] TypeError
 - [ ] SyntaxError
+- [ ] ReferenceError
 - [ ] try catch throw
 - [ ] Übung: Arrays, outOfBounds oder Element nicht vorhanden
 - [ ] commit

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        Arrays, outOfBounds oder Element nicht vorhanden
+        bei undefined einen Fehler werfen.
+
+
+        zusätzliche Aufgabe:
+        anmeldung zu einem Marathon
+        Eingabe vom Alter über ein Input
+        wenn der Marathonteilnehmer 7-15 Jahre alt ist, dann Kindermarathon
+        wenn 16-69, dann normales Marathon
+        wenn 70-90, dann mit extra Versicherung z.B.
+        Wenn nichts davon eingegeben wurde, dann wird ein Fehler geworfen.
+    </pre>
+    <script>
+        let myArray = [3, 4]
+        console.log('myArray[4] :>> ', myArray[4]); // undefined
+        let myOutOfBounds = new Error('out of bounds')
+        function giveElement(index) {
+            if (myArray[index] === undefined) {
+                console.log('bin in der Funktion');
+                throw myOutOfBounds // der erste geworfene Fehler wird abgefangen
+                throw new Error('das Element existiert nicht')
+            }
+            else {
+                throw new Error('Fehler aus else')
+            }
+        }
+        try {
+            giveElement(7)
+        } catch (error) {
+console.log('error.message :>> ', error.message);
+        } 
+        try {
+            giveElement(7)
+        }
+        
+        catch (myOutOfBounds) {
+            console.log('myOutOfBounds.message :>> ', myOutOfBounds.message);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCEPTIONS</title>
+</head>
+<body>
+    <h1>EXCEPTIONS</h1>
+    <pre>
+taucht ein unabgefangenes Error auf, wird der nachstehende Code nicht ausgeführt
+    </pre>
+    <h2>try catch</h2>
+    <pre>
+catch-block wird ausgeführt, wenn Fehler auftauchen
+es ist egal, wie die error-Variable im catch-Block heißt 
+finally wird immer ausgeführt
+    </pre>
+    <script>
+        // unexistierendeMethode() // Uncaught ReferenceError: unexistierendeMethode is not defined
+        try {
+            // unexistierendeMethode()
+            console.log('bin im try-Block');
+        } catch (error) {
+            console.log('error :>> ', error);
+            console.log('error.message :>> ', error.message);
+        } finally {
+console.log('bin im finally-Block');
+        }
+
+
+    </script>
+    <hr>
+
+
+    <h2>Custom Errors & throw</h2>
+    <script>
+        let myError = new Error('mein Fehler: du machst alles falsch')
+
+        function giveNumber(zahl) {
+            if (zahl == 4)
+            throw myError;
+        }
+
+        // try {
+        //     giveNumber(4)
+        // } catch (error) {
+        //     console.log('error :>> ', error);
+        //     console.log('error.message :>> ', error.message); // mein Fehler: du machst alles falsch
+        // }
+
+        try {
+            unexistierendeMethode()
+            giveNumber(4)
+        } catch (error) {
+            console.log('error :>> ', error);
+            console.log('error.message :>> ', error.message); 
+            // unexistierendeMethode is not defined
+            // weil dieser Fehler als erster geworfen wurde
+        }
+
+    </script>
+<hr>
+
+
+<h2>if else</h2>
+<pre>
+    man kann auch if else anstatt von try catch nehmen
+</pre>
+
+</body>
+</html>
